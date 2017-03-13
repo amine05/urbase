@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a4cdaff5-f7f8-465b-967e-d847d6a858dc">
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     zone_ind.`id_zi` AS zone_ind_id_zi,
+     zone_ind.`code_zi` AS zone_ind_code_zi,
+     zone_ind.`lib_zi` AS zone_ind_lib_zi,
+     zone_ind.`sup_zi` AS zone_ind_sup_zi,
+     zone_ind.`id_w` AS zone_ind_id_w,
+     zone_ind.`date_Creation` AS zone_ind_date_Creation,
+     zone_ind.`nbr_lot` AS zone_ind_nbr_lot,
+     zone_ind.`OBSERVATION` AS zone_ind_OBSERVATION,
+     zone_ind.`nbr_lotS` AS zone_ind_nbr_lotS,
+     zone_ind.`nbr_lotC` AS zone_ind_nbr_lotC,
+     zone_ind.`Sup_Cess` AS zone_ind_Sup_Cess,
+     zone_ind.`Sup_VS` AS zone_ind_Sup_VS
+FROM
+     `zone_ind` zone_ind]]>
+	</queryString>
+	<field name="zone_ind_id_zi" class="java.lang.Integer"/>
+	<field name="zone_ind_code_zi" class="java.lang.String"/>
+	<field name="zone_ind_lib_zi" class="java.lang.String"/>
+	<field name="zone_ind_sup_zi" class="java.lang.Double"/>
+	<field name="zone_ind_id_w" class="java.lang.Integer"/>
+	<field name="zone_ind_date_Creation" class="java.sql.Date"/>
+	<field name="zone_ind_nbr_lot" class="java.lang.Integer"/>
+	<field name="zone_ind_OBSERVATION" class="java.lang.String"/>
+	<field name="zone_ind_nbr_lotS" class="java.lang.Integer"/>
+	<field name="zone_ind_nbr_lotC" class="java.lang.Integer"/>
+	<field name="zone_ind_Sup_Cess" class="java.lang.Double"/>
+	<field name="zone_ind_Sup_VS" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

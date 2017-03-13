@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DATAG_subreport1" language="groovy" pageWidth="802" pageHeight="555" orientation="Landscape" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="710a7431-3b0d-4f72-8025-dd8245e2d273">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ZZ" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT * from lot LEFT join investisseur on investisseur.id_invst=lot.id_invst LEFT join cession on cession.id_lot= lot.id_lot
+WHERE lot.id_zi =$P{ZZ}]]>
+	</queryString>
+	<field name="id_lot" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cod_lot" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="lib_lot" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sup_lot" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="state_lot" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_zi" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_invst" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="type_lot" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="situation_physique" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="observation" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date_C" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date_A" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pris_vent" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cod_invst" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nom_invst" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="activite" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_cession" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date_attribution" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date_acte" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="n_acte" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date_resolution" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date_remise" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="type" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="11" y="2" width="100" height="20" uuid="71681223-0a65-410c-bb94-39b763cd45cd"/>
+				<text><![CDATA[lib_lot]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="164" y="2" width="100" height="20" uuid="4de3c655-ac03-4534-a141-01266825665e"/>
+				<text><![CDATA[nom_invst]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="342" y="2" width="100" height="20" uuid="a9c72368-eaff-4aa4-a31d-464291e5c29a"/>
+				<text><![CDATA[id_zi]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="38" splitType="Stretch">
+			<textField>
+				<reportElement x="11" y="18" width="100" height="20" uuid="943a1ffc-aa6e-4514-8902-88ca21dd832f"/>
+				<textFieldExpression><![CDATA[$F{lib_lot}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="164" y="18" width="100" height="20" uuid="72183406-7d46-4371-b1e6-a5a2c5844050"/>
+				<textFieldExpression><![CDATA[$F{nom_invst}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="342" y="18" width="100" height="20" uuid="be4c40cd-4b68-4f85-82d8-d1607034b0e3"/>
+				<textFieldExpression><![CDATA[$F{id_zi}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,38 @@
+
+/*
+étape pour creé background treéééés important
+
+  
+D�grade� (pour le claque)
+
+color 1 :  a1f9a6
+color 2 :  78ebe1
+
+incrustation degrade� 
+
+color 1 : f62b31
+color 2: f8f810
+opacit� 100%
+style R�fl�chi
+
+lueur externe
+
+opacit� 95
+bruit 0
+color : 8f480a
+technique : plus tamis�e
+gross 62%
+taille 3 
+etendu 50
+variation 1
+
+Ombre port�e
+
+produit opacit� 66
+distance 5px
+grossi 9 
+taille 7px
+
+
+
+bn courage :) (y) */

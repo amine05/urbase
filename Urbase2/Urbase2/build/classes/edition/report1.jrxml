@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="affa7306-900f-42a5-9ece-feb02920f25b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Service info\\Desktop\\Projet312017\\Urbase2\\Urbase2\\src\\edition\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     zone_ind.`id_zi` AS zone_ind_id_zi,
+     zone_ind.`code_zi` AS zone_ind_code_zi,
+     zone_ind.`lib_zi` AS zone_ind_lib_zi,
+     zone_ind.`sup_zi` AS zone_ind_sup_zi,
+     zone_ind.`id_w` AS zone_ind_id_w,
+     zone_ind.`date_Creation` AS zone_ind_date_Creation,
+     zone_ind.`nbr_lot` AS zone_ind_nbr_lot,
+     zone_ind.`OBSERVATION` AS zone_ind_OBSERVATION,
+     zone_ind.`nbr_lotS` AS zone_ind_nbr_lotS,
+     zone_ind.`nbr_lotC` AS zone_ind_nbr_lotC,
+     zone_ind.`Sup_Cess` AS zone_ind_Sup_Cess,
+     zone_ind.`Sup_VS` AS zone_ind_Sup_VS
+FROM
+     `zone_ind` zone_ind]]>
+	</queryString>
+	<field name="zone_ind_id_zi" class="java.lang.Integer"/>
+	<field name="zone_ind_code_zi" class="java.lang.String"/>
+	<field name="zone_ind_lib_zi" class="java.lang.String"/>
+	<field name="zone_ind_sup_zi" class="java.lang.Double"/>
+	<field name="zone_ind_id_w" class="java.lang.Integer"/>
+	<field name="zone_ind_date_Creation" class="java.sql.Date"/>
+	<field name="zone_ind_nbr_lot" class="java.lang.Integer"/>
+	<field name="zone_ind_OBSERVATION" class="java.lang.String"/>
+	<field name="zone_ind_nbr_lotS" class="java.lang.Integer"/>
+	<field name="zone_ind_nbr_lotC" class="java.lang.Integer"/>
+	<field name="zone_ind_Sup_Cess" class="java.lang.Double"/>
+	<field name="zone_ind_Sup_VS" class="java.lang.Double"/>
+	<pageHeader>
+		<band height="50" splitType="Stretch">
+			<image hAlign="Center">
+				<reportElement x="0" y="0" width="802" height="50" uuid="8365320c-02cb-4a61-b7bd-9719403b7e4f"/>
+				<imageExpression><![CDATA["C:\\Users\\Service info\\Desktop\\Projet312017\\Urbase2\\Urbase2\\src\\icone\\entete - Copie.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="361" splitType="Stretch">
+			<textField>
+				<reportElement x="434" y="91" width="89" height="20" uuid="92e55cc0-a787-401d-84b1-13e2d647148f"/>
+				<textFieldExpression><![CDATA[$F{zone_ind_sup_zi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="434" y="30" width="89" height="20" uuid="ddb18fad-6080-44fe-aacb-898d38a9f37a"/>
+				<textFieldExpression><![CDATA[$F{zone_ind_nbr_lot}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="434" y="50" width="89" height="20" uuid="8c86502b-bae0-4147-954c-f42fcf4e8d7d"/>
+				<textFieldExpression><![CDATA[$F{zone_ind_nbr_lotS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="434" y="71" width="89" height="20" uuid="702aa580-48bd-49ee-83e9-b74b38f12036"/>
+				<textFieldExpression><![CDATA[$F{zone_ind_nbr_lotC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="434" y="111" width="89" height="20" uuid="7b9d9fc7-68d7-437b-a632-8ff11b4280cc"/>
+				<textFieldExpression><![CDATA[$F{zone_ind_Sup_Cess}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="434" y="131" width="89" height="20" uuid="87d29cf7-c057-4be5-8445-4a8d393f8f28"/>
+				<textFieldExpression><![CDATA[$F{zone_ind_Sup_VS}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="0" y="181" width="802" height="180" uuid="3bbe8965-96eb-4564-a570-01f60c039f17"/>
+				<subreportParameter name="ZZ">
+					<subreportParameterExpression><![CDATA[$F{zone_ind_id_zi}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "report1_subreport1.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="-1" y="30" width="279" height="20" uuid="5ae5501d-9b21-4784-b806-de62b8ea1c70"/>
+				<text><![CDATA[NOMBRE TOTAL DE LOTS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="51" width="279" height="20" uuid="8666e1f7-b102-489b-848d-5de9ac6278ca"/>
+				<text><![CDATA[NOMBRE TOTALDE LOTS ATTRIBUES(CESSION) : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="91" width="279" height="20" uuid="69846ac9-e02a-4569-8b86-a76da31a488c"/>
+				<text><![CDATA[SUPPERFICIER TOTAL DU ZONE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="111" width="279" height="20" uuid="5cd6e69c-017e-40a0-b5b0-d68ad01bd24e"/>
+				<text><![CDATA[SUPERFFICIER CESSIBLE : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="131" width="279" height="20" uuid="7748b5f9-c423-4d49-8286-8e67cdf98473"/>
+				<text><![CDATA[SUPPERFICIER VRD : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="9ff0228c-c032-472e-8733-e189396ab3aa"/>
+				<text><![CDATA[NOM DU ZONE :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="71" width="279" height="20" uuid="fe2128f1-70a0-435c-91ec-ef345af1fb2f"/>
+				<text><![CDATA[NOMBRE TOTALDE LOTS ATTRIBUES(CONCESSION) : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="434" y="0" width="100" height="20" uuid="382f91cb-c30b-45d8-9c60-72f4039c17ca"/>
+				<textFieldExpression><![CDATA[$F{zone_ind_lib_zi}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="50">
+			<image hAlign="Center">
+				<reportElement x="0" y="0" width="802" height="50" uuid="c41e090f-7b67-4c1a-a4d3-8a7588e6524e"/>
+				<imageExpression><![CDATA["C:\\Users\\Service info\\Desktop\\Projet312017\\Urbase2\\Urbase2\\src\\icone\\pied - Copie.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,515 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Urbase;
+
+import DB.ResultSetTableModel;
+import DB.db_connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.design.JRDesignQuery;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
+
+/**
+ *
+ * @author Apache
+ */
+public class Home2 extends javax.swing.JFrame {
+
+    /**
+     * Creates new form Home2
+     */
+    ResultSet rs;
+    db_connection db;
+    DefaultTableModel model;
+     DefaultTableModel model1;
+     String id;
+     String SQL="select * from home2";
+    static public int kk=1;
+    public Home2() {
+      
+        initComponents();
+           db = new db_connection();
+        table();
+    }
+     void affiche_Table(ResultSet rs3){
+         
+              model = new DefaultTableModel(){
+     
+     public Class getColumnClass(int c) {
+         return getValueAt(0, c).getClass();
+     }
+};
+     
+     model.addColumn("wilaya");
+     model.addColumn("zone");
+     model.addColumn("sup zi");
+     model.addColumn("nbrLot");
+     model.addColumn("nom_invst");
+     model.addColumn("activite");
+     model.addColumn("lib_lot");
+     model.addColumn("type_lot");
+     
+     
+     model.addColumn("sup_lot");
+     model.addColumn("date_A");
+     model.addColumn("date_acte");
+      model.addColumn("n_acte");
+   
+        try {
+            while(rs3.next()){
+                model.addRow(new Object[]{rs3.getString("lib_w"),rs3.getString("lib_zi")
+                        ,rs3.getString("sup_zi"),rs3.getString("nbr_lot"),rs3.getString("nom_invst"),
+                        rs3.getString("activite"),rs3.getString("lib_lot")
+             ,rs3.getString("type_lot"),rs3.getString("sup_lot"),rs3.getString("date_A")
+                        ,rs3.getString("date_acte"),rs3.getString("n_acte") 
+                
+                
+                });
+                 
+            }
+            
+            
+             tbl_prod.setModel(model);
+             //  model.setRowCount(0);
+             //  if(tbl_prod.getRowCount()!=0)
+         //  tbl_prod.setRowSorter(sorter);
+              
+            //    String  xx;ty
+        } catch (SQLException ex) {
+            Logger.getLogger(Home2.class.getName()).log(Level.SEVERE, null, ex);
+        }
+         
+     }
+ public void table() {
+         
+  
+    
+     rs = db.exécutionQuery("select * from home2");
+     String name;
+          model = new DefaultTableModel(){
+     
+     public Class getColumnClass(int c) {
+         return getValueAt(0, c).getClass();
+     }
+};
+     
+     model.addColumn("wilaya");
+     model.addColumn("zone");
+     model.addColumn("sup zi");
+     model.addColumn("nbrLot");
+     model.addColumn("nom_invst");
+     model.addColumn("activite");
+     model.addColumn("lib_lot");
+     model.addColumn("type_lot");
+     
+     
+     model.addColumn("sup_lot");
+     model.addColumn("date_A");
+     model.addColumn("date_acte");
+      model.addColumn("n_acte");
+   
+        try {
+            while(rs.next()){
+                model.addRow(new Object[]{rs.getString("lib_w"),rs.getString("lib_zi")
+                        ,rs.getString("sup_zi"),rs.getString("nbr_lot"),rs.getString("nom_invst"),
+                        rs.getString("activite"),rs.getString("lib_lot")
+             ,rs.getString("type_lot"),rs.getString("sup_lot"),rs.getString("date_A")
+                        ,rs.getString("date_acte"),rs.getString("n_acte") 
+                
+                
+                });
+                 
+            }
+            
+            
+             tbl_prod.setModel(model);
+             //  model.setRowCount(0);
+             //  if(tbl_prod.getRowCount()!=0)
+         //  tbl_prod.setRowSorter(sorter);
+              
+            //    String  xx;ty
+        } catch (SQLException ex) {
+            Logger.getLogger(Home2.class.getName()).log(Level.SEVERE, null, ex);
+        }
+     
+     //    xx= String.valueOf(model1.getValueAt(0,0));*/
+     
+     
+    
+     
+ 
+    
+    }
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tbl_prod = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
+        comrech = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
+        RR = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu7 = new javax.swing.JMenu();
+        jMenu8 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1400, 563));
+
+        tbl_prod.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tbl_prod);
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icone/Search-icon.png"))); // NOI18N
+        jButton1.setText("chercher");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        comrech.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "wilaya(nom)", "zone(nom)", "investisseur(nom)", "investisseur(activite)", "lot(nom)", "Type du lot", "data Attribution avant", "date Attribution apres", "Max Zone_Lots", "Min Zone_Lots" }));
+
+        jLabel5.setText("recherche par :");
+
+        RR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RRActionPerformed(evt);
+            }
+        });
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icone/actualiser .png"))); // NOI18N
+        jButton2.setText("Actualiser");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icone/print-icon.png"))); // NOI18N
+        jButton3.setText("Imprimer");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jMenu7.setText("Wilaya");
+        jMenu7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu7MouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenu7);
+
+        jMenu8.setText("Zone");
+        jMenu8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu8MouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenu8);
+
+        jMenu2.setText("Lot");
+        jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu2MouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenu2);
+
+        jMenu6.setText("investisseur");
+        jMenu6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu6MouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenu6);
+
+        setJMenuBar(jMenuBar1);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 898, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(comrech, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(RR, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1)
+                        .addGap(17, 17, 17)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton3)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comrech, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RR, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(316, 316, 316))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        ResultSet rs2;
+        DefaultTableModel model3;
+        
+        if (RR.getText().equals("")&&!((comrech.getSelectedItem().equals("Max Zone_Lots"))||((comrech.getSelectedItem().equals("Min Zone_Lots"))))) {
+            JOptionPane.showMessageDialog(this, "SVP entrer quelque chose");
+        } else {
+            if (comrech.getSelectedItem().equals("investisseur(nom)")) {
+                rs2 = db.exécutionQuery("select * from home2 where nom_invst LIKE '" + RR.getText() + "%'");
+                SQL = "select * from home2 where nom_invst LIKE '" + RR.getText() + "%'";
+            ///    SQL2="SELECT * FROM ZONE_ind  where idzone in()";
+                tbl_prod.setModel(new ResultSetTableModel(rs2));
+                //affiche_Table(rs2);
+            }
+ else if (comrech.getSelectedItem().equals("investisseur(activite)")) {
+                rs2 = db.exécutionQuery("select * from home2 where activite LIKE '" + RR.getText() + "%'");
+               SQL = "select * from home2 where lib_lot LIKE '" + RR.getText() + "%'";
+                tbl_prod.setModel(new ResultSetTableModel(rs2));
+               //  affiche_Table(rs2);
+   
+           
+            } else if (comrech.getSelectedItem().equals("lot(nom)")) {
+                rs2 = db.exécutionQuery("select * from home2 where lib_lot LIKE '" + RR.getText() + "%'");
+               SQL = "select * from home2 where lib_lot LIKE '" + RR.getText() + "%'";
+               tbl_prod.setModel(new ResultSetTableModel(rs2));
+              // affiche_Table(rs2);
+
+            }else if (comrech.getSelectedItem().equals("zone(nom)")) {
+                rs2 = db.exécutionQuery("select * from home2  where lib_zi LIKE '" + RR.getText() + "%'");
+                 SQL = "select * from home2 where lib_zi LIKE '" + RR.getText() + "%'";
+                tbl_prod.setModel(new ResultSetTableModel(rs2));
+              //  affiche_Table(rs2);
+
+            }else if (comrech.getSelectedItem().equals("wilaya(nom)")) {
+                rs2 = db.exécutionQuery("select * from home2   where lib_w LIKE '" + RR.getText() + "%'");
+                 SQL = "select * from home2   where lib_w LIKE '" + RR.getText() + "%'";
+                tbl_prod.setModel(new ResultSetTableModel(rs2));
+               // affiche_Table(rs2);
+               
+
+            }else if (comrech.getSelectedItem().equals("data Attribution avant")) {
+                rs2 = db.exécutionQuery("select * from home2   where date_A < '" + RR.getText() + "%'");
+                 SQL = "select * from home2  where date_A <= '" + RR.getText() + "%'";
+                tbl_prod.setModel(new ResultSetTableModel(rs2));
+              // affiche_Table(rs2);
+
+            }else if (comrech.getSelectedItem().equals("date Attribution apres")) {
+                rs2 = db.exécutionQuery("select * from home2   where date_A > '" + RR.getText() + "%'");
+                SQL = "select * from home2   where date_A >= '" + RR.getText() + "%'";
+                tbl_prod.setModel(new ResultSetTableModel(rs2));
+               // affiche_Table(rs2);
+
+            }else if (comrech.getSelectedItem().equals("Max Zone_Lots")) {
+                
+                rs2 = db.exécutionQuery("select * from home2 where nbr_lot in(SELECT max(nbr_lot)from home2)");
+                SQL = "select * from home2 where nbr_lot in(SELECT max(nbr_lot)from home2)";
+                tbl_prod.setModel(new ResultSetTableModel(rs2));
+            //  affiche_Table(rs2);
+            }else if (comrech.getSelectedItem().equals("Min Zone_Lots")) {
+                rs2 = db.exécutionQuery("select * from home2 where nbr_lot in(SELECT min(nbr_lot)from home2)");
+                 SQL = "select * from home2 where nbr_lot in(SELECT min(nbr_lot)from home2)";
+                tbl_prod.setModel(new ResultSetTableModel(rs2));
+           //    affiche_Table(rs2);
+            }else if (comrech.getSelectedItem().equals("Type du lot")) {
+                rs2 = db.exécutionQuery("select * from home2 where type_lot LIKE '" + RR.getText() + "%'");
+                 SQL = "select * from home2 where type_lot = '" + RR.getText() + "%'";
+                tbl_prod.setModel(new ResultSetTableModel(rs2));
+               // affiche_Table(rs2);
+            }
+        }
+ RR.setText("");
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void RRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RRActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RRActionPerformed
+
+    private void jMenu7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu7MouseClicked
+        Wilaya k = null;
+        try {
+            k = new Wilaya();
+        } catch (SQLException ex) {
+            Logger.getLogger(Urbase.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        k.setVisible(true); // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu7MouseClicked
+
+    private void jMenu8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu8MouseClicked
+        Zone_Indst k = null;
+        try {
+            k = new Zone_Indst();
+        } catch (SQLException ex) {
+            Logger.getLogger(Urbase.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        k.setVisible(true);         // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu8MouseClicked
+
+    private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
+        try {
+            Lot k = new Lot();
+            k.setVisible(true);        // TODO add your handling code here:
+        } catch (SQLException ex) {
+            Logger.getLogger(Urbase.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenu2MouseClicked
+
+    private void jMenu6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu6MouseClicked
+        Invst k = null;
+        try {
+            k = new Invst();
+        } catch (SQLException ex) {
+            Logger.getLogger(Urbase.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        k.setVisible(true);      // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu6MouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+  rs = db.exécutionQuery("select * from home2");
+
+        tbl_prod.setModel(new ResultSetTableModel(rs));        // TODO add your handling code here:
+        RR.setText("");
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+ try {    
+            
+            JasperDesign jd = JRXmlLoader.load("C:\\Users\\Service info\\Desktop\\Projet312017\\Urbase2\\Urbase2\\src\\edition\\dfd.jrxml");
+            JasperReport  jasperReport ;
+            JRDesignQuery newQuery = new JRDesignQuery();
+            newQuery.setText(SQL);
+           jd.setQuery(newQuery);
+             
+            
+            jasperReport = JasperCompileManager.compileReport(jd);
+            //System.out.println("rrrrrrr");
+            db_connection db;
+             db = new db_connection();
+             String a ="";
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport,null ,db.connection );
+            //  System.out.println("sssss");
+            
+            
+            
+            
+            JasperViewer.viewReport(jasperPrint,false);
+         //   int DISPOSE_ON_CLOSE1 = JasperViewer.DISPOSE_ON_CLOSE
+                 
+            
+        } catch (JRException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Home2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Home2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Home2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Home2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Home2().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField RR;
+    private javax.swing.JComboBox<String> comrech;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tbl_prod;
+    // End of variables declaration//GEN-END:variables
+}

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report7_subreport2" language="groovy" pageWidth="802" pageHeight="555" orientation="Landscape" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="aca8fddf-decb-456a-aefd-669e6a987d3c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ZZ" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT
+     lot.`id_lot` AS lot_id_lot,
+     lot.`cod_lot` AS lot_cod_lot,
+     lot.`lib_lot` AS lot_lib_lot,
+     lot.`sup_lot` AS lot_sup_lot,
+     lot.`id_zi` AS lot_id_zi,
+     lot.`id_invst` AS lot_id_invst,
+     lot.`type_lot` AS lot_type_lot,
+     lot.`situation_physique` AS lot_situation_physique,
+     lot.`observation` AS lot_observation,
+     lot.`date_C` AS lot_date_C,
+     lot.`date_A` AS lot_date_A,
+     lot.`pris_vent` AS lot_pris_vent,
+     lot.`state_lot` AS lot_state_lot
+FROM
+     `lot` lot
+where lot.`id_lot = $P{ZZ}]]>
+	</queryString>
+	<field name="lot_id_lot" class="java.lang.Integer"/>
+	<field name="lot_cod_lot" class="java.lang.String"/>
+	<field name="lot_lib_lot" class="java.lang.String"/>
+	<field name="lot_sup_lot" class="java.lang.String"/>
+	<field name="lot_id_zi" class="java.lang.Integer"/>
+	<field name="lot_id_invst" class="java.lang.Integer"/>
+	<field name="lot_type_lot" class="java.lang.String"/>
+	<field name="lot_situation_physique" class="java.lang.String"/>
+	<field name="lot_observation" class="java.lang.String"/>
+	<field name="lot_date_C" class="java.sql.Date"/>
+	<field name="lot_date_A" class="java.sql.Date"/>
+	<field name="lot_pris_vent" class="java.lang.Double"/>
+	<field name="lot_state_lot" class="java.lang.String"/>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="66" height="20" uuid="f51f2689-8d54-4b28-8ff8-ea21b5d3a708"/>
+				<text><![CDATA[lot_cod_lot]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="66" y="0" width="66" height="20" uuid="339adcf0-d438-4006-9c1f-35c46bdc87d8"/>
+				<text><![CDATA[lot_lib_lot]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="132" y="0" width="66" height="20" uuid="daf1623f-cbd9-463b-aa58-929a07b01fcf"/>
+				<text><![CDATA[lot_sup_lot]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="198" y="0" width="66" height="20" uuid="1e94d95e-3979-4cea-93c8-4dc005259d68"/>
+				<text><![CDATA[lot_id_zi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="264" y="0" width="66" height="20" uuid="b8a00dc3-de66-459f-b003-ce85b3081286"/>
+				<text><![CDATA[lot_id_invst]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="0" width="66" height="20" uuid="cda89f37-726e-41fb-a537-caa37e8d84a2"/>
+				<text><![CDATA[lot_type_lot]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="396" y="0" width="66" height="20" uuid="95f0ea5d-0b8e-4268-be3f-e5a92eb80ca0"/>
+				<text><![CDATA[lot_situation_physique]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="462" y="0" width="66" height="20" uuid="b005e819-05cb-444c-afa9-4d0a7c523f2a"/>
+				<text><![CDATA[lot_observation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="528" y="0" width="66" height="20" uuid="25594854-cc20-4e25-9a5e-acd0db23d2c5"/>
+				<text><![CDATA[lot_date_C]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="594" y="0" width="66" height="20" uuid="9e518d00-475a-470c-a22d-2ea6c49a0bf5"/>
+				<text><![CDATA[lot_date_A]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="660" y="0" width="66" height="20" uuid="d55cac86-990d-42be-a699-3b96c98a2ee4"/>
+				<text><![CDATA[lot_pris_vent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="726" y="0" width="66" height="20" uuid="e73053a8-b007-4539-85ac-99512b2421b7"/>
+				<text><![CDATA[lot_state_lot]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="66" height="20" uuid="45eb764f-6397-4993-bd7e-a54e10b13138"/>
+				<textFieldExpression><![CDATA[$F{lot_cod_lot}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="66" y="0" width="66" height="20" uuid="5229f7b4-f7eb-4bd4-8025-c35296542c7b"/>
+				<textFieldExpression><![CDATA[$F{lot_lib_lot}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="132" y="0" width="66" height="20" uuid="d165a8c5-309a-405b-8287-704870be5f92"/>
+				<textFieldExpression><![CDATA[$F{lot_sup_lot}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="198" y="0" width="66" height="20" uuid="0e815c25-8bae-48d8-8c5d-7ead4dbf9c45"/>
+				<textFieldExpression><![CDATA[$F{lot_id_zi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="264" y="0" width="66" height="20" uuid="1abfb019-3ad8-4dfc-8b32-61942129cb03"/>
+				<textFieldExpression><![CDATA[$F{lot_id_invst}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="0" width="66" height="20" uuid="af542cc1-dab2-4b54-b038-de8f775faafa"/>
+				<textFieldExpression><![CDATA[$F{lot_type_lot}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="396" y="0" width="66" height="20" uuid="db0dd7f9-af70-4fff-ae43-f9f02dccae50"/>
+				<textFieldExpression><![CDATA[$F{lot_situation_physique}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="462" y="0" width="66" height="20" uuid="9c8899a6-1040-4d2a-8b98-44de6817bcc7"/>
+				<textFieldExpression><![CDATA[$F{lot_observation}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="528" y="0" width="66" height="20" uuid="084203d9-fc4f-4523-9a68-a8bca101b720"/>
+				<textFieldExpression><![CDATA[$F{lot_date_C}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="594" y="0" width="66" height="20" uuid="e98daa2e-36eb-491a-b329-8ad3207d5080"/>
+				<textFieldExpression><![CDATA[$F{lot_date_A}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="660" y="0" width="66" height="20" uuid="30030fe8-3988-41be-9fd4-d9cca09c396b"/>
+				<textFieldExpression><![CDATA[$F{lot_pris_vent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="726" y="0" width="66" height="20" uuid="3b678375-292a-4d9d-9f3f-88330a0132cc"/>
+				<textFieldExpression><![CDATA[$F{lot_state_lot}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

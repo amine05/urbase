@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="19f16c7d-c97d-4e07-9a67-549c1013631f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     zone_ind.`id_zi` AS zone_ind_id_zi,
+     zone_ind.`code_zi` AS zone_ind_code_zi,
+     zone_ind.`lib_zi` AS zone_ind_lib_zi,
+     zone_ind.`sup_zi` AS zone_ind_sup_zi,
+     zone_ind.`id_w` AS zone_ind_id_w,
+     zone_ind.`date_Creation` AS zone_ind_date_Creation,
+     zone_ind.`nbr_lot` AS zone_ind_nbr_lot,
+     zone_ind.`OBSERVATION` AS zone_ind_OBSERVATION,
+     zone_ind.`nbr_lotS` AS zone_ind_nbr_lotS,
+     zone_ind.`nbr_lotC` AS zone_ind_nbr_lotC,
+     zone_ind.`Sup_Cess` AS zone_ind_Sup_Cess,
+     zone_ind.`Sup_VS` AS zone_ind_Sup_VS,
+     lot.`id_lot` AS lot_id_lot,
+     lot.`cod_lot` AS lot_cod_lot,
+     lot.`lib_lot` AS lot_lib_lot,
+     lot.`sup_lot` AS lot_sup_lot,
+     lot.`state_lot` AS lot_state_lot,
+     lot.`id_zi` AS lot_id_zi,
+     lot.`id_invst` AS lot_id_invst,
+     lot.`type_lot` AS lot_type_lot,
+     lot.`situation_physique` AS lot_situation_physique,
+     lot.`pris_vent` AS lot_pris_vent,
+     lot.`observation` AS lot_observation,
+     lot.`date_C` AS lot_date_C,
+     lot.`date_A` AS lot_date_A
+FROM
+     `zone_ind` zone_ind INNER JOIN `lot` lot ON zone_ind.`id_zi` = lot.`id_zi`]]>
+	</queryString>
+	<field name="zone_ind_id_zi" class="java.lang.Integer"/>
+	<field name="zone_ind_code_zi" class="java.lang.String"/>
+	<field name="zone_ind_lib_zi" class="java.lang.String"/>
+	<field name="zone_ind_sup_zi" class="java.lang.String"/>
+	<field name="zone_ind_id_w" class="java.lang.Integer"/>
+	<field name="zone_ind_date_Creation" class="java.sql.Date"/>
+	<field name="zone_ind_nbr_lot" class="java.lang.Integer"/>
+	<field name="zone_ind_OBSERVATION" class="java.lang.String"/>
+	<field name="zone_ind_nbr_lotS" class="java.lang.Integer"/>
+	<field name="zone_ind_nbr_lotC" class="java.lang.Integer"/>
+	<field name="zone_ind_Sup_Cess" class="java.lang.Double"/>
+	<field name="zone_ind_Sup_VS" class="java.lang.Double"/>
+	<field name="lot_id_lot" class="java.lang.Integer"/>
+	<field name="lot_cod_lot" class="java.lang.String"/>
+	<field name="lot_lib_lot" class="java.lang.String"/>
+	<field name="lot_sup_lot" class="java.lang.String"/>
+	<field name="lot_state_lot" class="java.lang.String"/>
+	<field name="lot_id_zi" class="java.lang.Integer"/>
+	<field name="lot_id_invst" class="java.lang.Integer"/>
+	<field name="lot_type_lot" class="java.lang.String"/>
+	<field name="lot_situation_physique" class="java.lang.String"/>
+	<field name="lot_pris_vent" class="java.lang.String"/>
+	<field name="lot_observation" class="java.lang.String"/>
+	<field name="lot_date_C" class="java.sql.Date"/>
+	<field name="lot_date_A" class="java.sql.Date"/>
+	<summary>
+		<band height="318" splitType="Stretch">
+			<barChart>
+				<chart>
+					<reportElement x="0" y="0" width="555" height="318" uuid="ac883f53-fdf0-43b8-982c-dd7e2526ead0"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["Dummy Series"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{zone_ind_lib_zi}]]></categoryExpression>
+						<valueExpression><![CDATA[ $F{zone_ind_id_zi}.longValue()]]></valueExpression>
+						<labelExpression><![CDATA[$F{zone_ind_nbr_lot}]]></labelExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+		</band>
+	</summary>
+</jasperReport>

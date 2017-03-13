@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d43ce8a6-5b8d-4aa5-b76c-553878a1a35d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\admin\\Desktop\\projet2\\Projet312017\\Urbase2\\Urbase2\\src\\edition\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     zone_ind.`id_zi` AS zone_ind_id_zi,
+     zone_ind.`code_zi` AS zone_ind_code_zi,
+     zone_ind.`lib_zi` AS zone_ind_lib_zi,
+     zone_ind.`sup_zi` AS zone_ind_sup_zi,
+     zone_ind.`id_w` AS zone_ind_id_w,
+     zone_ind.`date_Creation` AS zone_ind_date_Creation,
+     zone_ind.`nbr_lot` AS zone_ind_nbr_lot,
+     zone_ind.`OBSERVATION` AS zone_ind_OBSERVATION,
+     zone_ind.`nbr_lotS` AS zone_ind_nbr_lotS,
+     zone_ind.`nbr_lotC` AS zone_ind_nbr_lotC,
+     zone_ind.`Sup_Cess` AS zone_ind_Sup_Cess,
+     zone_ind.`Sup_VS` AS zone_ind_Sup_VS
+FROM
+     `zone_ind` zone_ind]]>
+	</queryString>
+	<field name="zone_ind_id_zi" class="java.lang.Integer"/>
+	<field name="zone_ind_code_zi" class="java.lang.String"/>
+	<field name="zone_ind_lib_zi" class="java.lang.String"/>
+	<field name="zone_ind_sup_zi" class="java.lang.Double"/>
+	<field name="zone_ind_id_w" class="java.lang.Integer"/>
+	<field name="zone_ind_date_Creation" class="java.sql.Date"/>
+	<field name="zone_ind_nbr_lot" class="java.lang.Integer"/>
+	<field name="zone_ind_OBSERVATION" class="java.lang.String"/>
+	<field name="zone_ind_nbr_lotS" class="java.lang.Integer"/>
+	<field name="zone_ind_nbr_lotC" class="java.lang.Integer"/>
+	<field name="zone_ind_Sup_Cess" class="java.lang.Double"/>
+	<field name="zone_ind_Sup_VS" class="java.lang.Double"/>
+	<title>
+		<band height="71" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="59" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="245" splitType="Stretch">
+			<textField>
+				<reportElement x="370" y="1" width="185" height="20" uuid="9320ac23-d044-44fd-a917-d6f0f89b2f95"/>
+				<textFieldExpression><![CDATA[$F{zone_ind_lib_zi}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="18" y="1" width="166" height="20" uuid="f01497d3-94e8-4c4d-acd7-cf42a0d99223"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nom du Zone :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="370" y="21" width="185" height="20" uuid="5810102d-8c15-4855-a25a-86ac1e3d5418"/>
+				<textFieldExpression><![CDATA[$F{zone_ind_sup_zi}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="18" y="21" width="166" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="f1c1769d-bc08-43a3-95d9-510ea6e290ed"/>
+				<textElement verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Superficie du Zone :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="18" y="41" width="166" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="06e4408a-00c3-4325-b1ac-d326831ae084"/>
+				<textElement verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Nombre Total de Lots :]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="0" y="132" width="610" height="113" uuid="0388a173-a96b-4357-9e9b-67755539849c">
+					<property name="net.sf.jasperreports.export.pdf.tag.td" value="full"/>
+				</reportElement>
+				<subreportParameter name="testt">
+					<subreportParameterExpression><![CDATA[$F{zone_ind_id_zi}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "report2_subreport1.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement x="370" y="41" width="185" height="20" uuid="8209347f-ce9b-4dbe-b3c4-e6dfc7953538"/>
+				<textFieldExpression><![CDATA[$F{zone_ind_nbr_lot}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="18" y="61" width="331" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="798ef93d-015f-486b-93cb-f9c31390d3e1"/>
+				<textElement verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Nombre Total de Lots  attribués(cession) :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="18" y="81" width="331" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="e17afbca-d24c-465c-931f-d5b16742e3e3"/>
+				<textElement verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Nombre Total de Lots attribués(concession)   :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="370" y="61" width="100" height="20" uuid="54be9106-f608-453e-85bb-f3b773707bf6"/>
+				<textFieldExpression><![CDATA[$F{zone_ind_nbr_lotS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="81" width="100" height="20" uuid="f13610ea-ffda-4810-90f3-17436093a856"/>
+				<textFieldExpression><![CDATA[$F{zone_ind_nbr_lotC}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="96" splitType="Stretch"/>
+		<band height="113"/>
+	</detail>
+	<pageFooter>
+		<band height="138"/>
+	</pageFooter>
+</jasperReport>

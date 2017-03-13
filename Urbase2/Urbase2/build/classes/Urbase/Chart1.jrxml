@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="99bfc803-b9b1-44ad-a60d-9eda228d8e92">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="New Dataset 1" uuid="58d9d2b0-4a87-4223-8d86-ab5e37e87d73">
+		<queryString>
+			<![CDATA[SELECT
+     investisseur.`id_invst` AS investisseur_id_invst,
+        investisseur.`nom_invst` AS investisseur_nom_invst,
+     
+    count( lot.`id_lot`)
+     
+FROM
+     `investisseur` investisseur INNER JOIN `lot` lot ON investisseur.`id_invst` = lot.`id_invst`
+group by investisseur.`id_invst`]]>
+		</queryString>
+		<field name="investisseur_id_invst" class="java.lang.Integer"/>
+		<field name="investisseur_nom_invst" class="java.lang.String"/>
+		<field name="count( lot.`id_lot`)" class="java.lang.Long"/>
+	</subDataset>
+	<queryString>
+		<![CDATA[SELECT
+     zone_ind.`id_zi` AS zone_ind_id_zi,
+     zone_ind.`code_zi` AS zone_ind_code_zi,
+     zone_ind.`lib_zi` AS zone_ind_lib_zi,
+     zone_ind.`sup_zi` AS zone_ind_sup_zi,
+     zone_ind.`id_w` AS zone_ind_id_w,
+     zone_ind.`date_Creation` AS zone_ind_date_Creation,
+     zone_ind.`nbr_lot` AS zone_ind_nbr_lot,
+     zone_ind.`OBSERVATION` AS zone_ind_OBSERVATION,
+     zone_ind.`nbr_lotS` AS zone_ind_nbr_lotS,
+     zone_ind.`nbr_lotC` AS zone_ind_nbr_lotC,
+     zone_ind.`Sup_Cess` AS zone_ind_Sup_Cess,
+     zone_ind.`Sup_VS` AS zone_ind_Sup_VS
+FROM
+     `zone_ind` zone_ind
+order by  zone_ind.`nbr_lot`]]>
+	</queryString>
+	<field name="zone_ind_id_zi" class="java.lang.Integer"/>
+	<field name="zone_ind_code_zi" class="java.lang.String"/>
+	<field name="zone_ind_lib_zi" class="java.lang.String"/>
+	<field name="zone_ind_sup_zi" class="java.lang.String"/>
+	<field name="zone_ind_id_w" class="java.lang.Integer"/>
+	<field name="zone_ind_date_Creation" class="java.sql.Date"/>
+	<field name="zone_ind_nbr_lot" class="java.lang.Integer"/>
+	<field name="zone_ind_OBSERVATION" class="java.lang.String"/>
+	<field name="zone_ind_nbr_lotS" class="java.lang.Integer"/>
+	<field name="zone_ind_nbr_lotC" class="java.lang.Integer"/>
+	<field name="zone_ind_Sup_Cess" class="java.lang.Double"/>
+	<field name="zone_ind_Sup_VS" class="java.lang.Double"/>
+	<summary>
+		<band height="388" splitType="Stretch">
+			<barChart>
+				<chart>
+					<reportElement x="0" y="158" width="555" height="230" uuid="7f1fd789-6314-4889-a994-2dd486874122"/>
+					<chartTitle>
+						<titleExpression><![CDATA["lot"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{zone_ind_lib_zi}+' '+$F{zone_ind_date_Creation}.toString()]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{zone_ind_lib_zi}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{zone_ind_nbr_lot}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot isShowLabels="true">
+					<plot labelRotation="90.0"/>
+					<itemLabel/>
+					<categoryAxisFormat labelRotation="90.0">
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+			<pie3DChart>
+				<chart theme="eye.candy.sixties">
+					<reportElement x="0" y="0" width="555" height="137" uuid="49aa281e-9b90-48c7-be72-3f329fa6d1ae"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<dataset>
+						<datasetRun subDataset="New Dataset 1" uuid="88b4c38f-7f8f-4eba-b158-1ec98b74d944"/>
+					</dataset>
+					<keyExpression><![CDATA[$F{investisseur_nom_invst}]]></keyExpression>
+					<valueExpression><![CDATA[$F{count( lot.`id_lot`)}]]></valueExpression>
+					<labelExpression><![CDATA[$F{investisseur_nom_invst} + ' ' +$F{count( lot.`id_lot`)}.toString()]]></labelExpression>
+				</pieDataset>
+				<pie3DPlot>
+					<plot/>
+					<itemLabel/>
+				</pie3DPlot>
+			</pie3DChart>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="60a18ef2-0f1b-4604-aaa9-d01b97467007">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     zone_ind.`id_zi` AS zone_ind_id_zi,
+     zone_ind.`code_zi` AS zone_ind_code_zi,
+     zone_ind.`lib_zi` AS zone_ind_lib_zi,
+     zone_ind.`sup_zi` AS zone_ind_sup_zi,
+     zone_ind.`id_w` AS zone_ind_id_w,
+     zone_ind.`date_Creation` AS zone_ind_date_Creation,
+     zone_ind.`nbr_lot` AS zone_ind_nbr_lot,
+     zone_ind.`OBSERVATION` AS zone_ind_OBSERVATION,
+     zone_ind.`nbr_lotS` AS zone_ind_nbr_lotS,
+     zone_ind.`nbr_lotC` AS zone_ind_nbr_lotC,
+     zone_ind.`Sup_Cess` AS zone_ind_Sup_Cess,
+     zone_ind.`Sup_VS` AS zone_ind_Sup_VS
+FROM
+     `zone_ind` zone_ind]]>
+	</queryString>
+	<field name="zone_ind_id_zi" class="java.lang.Integer"/>
+	<field name="zone_ind_code_zi" class="java.lang.String"/>
+	<field name="zone_ind_lib_zi" class="java.lang.String"/>
+	<field name="zone_ind_sup_zi" class="java.lang.Double"/>
+	<field name="zone_ind_id_w" class="java.lang.Integer"/>
+	<field name="zone_ind_date_Creation" class="java.sql.Date"/>
+	<field name="zone_ind_nbr_lot" class="java.lang.Integer"/>
+	<field name="zone_ind_OBSERVATION" class="java.lang.String"/>
+	<field name="zone_ind_nbr_lotS" class="java.lang.Integer"/>
+	<field name="zone_ind_nbr_lotC" class="java.lang.Integer"/>
+	<field name="zone_ind_Sup_Cess" class="java.lang.Double"/>
+	<field name="zone_ind_Sup_VS" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="80" height="20" uuid="fcef2333-ec23-4a6f-a981-93fa821aab5b"/>
+				<text><![CDATA[zone_ind_lib_zi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="0" width="80" height="20" uuid="0dc6e683-97b0-4d93-b466-9e362a7630e4"/>
+				<text><![CDATA[zone_ind_sup_zi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="0" width="80" height="20" uuid="a07906df-621a-4a71-8c4d-99552b22b89d"/>
+				<text><![CDATA[zone_ind_id_w]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="0" width="80" height="20" uuid="f976bed2-f115-4245-a3a1-e56e7e0dd2b5"/>
+				<text><![CDATA[zone_ind_date_Creation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="0" width="80" height="20" uuid="0e9ab79f-5f24-4e67-8f1b-61ec12b17d43"/>
+				<text><![CDATA[zone_ind_nbr_lot]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="0" width="80" height="20" uuid="5af756ef-00cc-47d3-8c02-b41ef0fa393a"/>
+				<text><![CDATA[zone_ind_OBSERVATION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="0" width="80" height="20" uuid="fdb8bd8a-d190-449d-8723-96abd19e5cbd"/>
+				<text><![CDATA[zone_ind_nbr_lotS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="560" y="0" width="80" height="20" uuid="18c51bc1-1066-441d-ae23-263bb8b417a5"/>
+				<text><![CDATA[zone_ind_nbr_lotC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="640" y="0" width="80" height="20" uuid="ba42764f-c395-4d17-b05c-7237dff3f7ae"/>
+				<text><![CDATA[zone_ind_Sup_Cess]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="720" y="0" width="80" height="20" uuid="27db1306-97b8-4825-88ae-7a64509a0e0b"/>
+				<text><![CDATA[zone_ind_Sup_VS]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="145" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="80" height="20" uuid="b1168b4c-f617-43c8-8f10-5810319a3bd6"/>
+				<textFieldExpression><![CDATA[$F{zone_ind_lib_zi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="0" width="80" height="20" uuid="73979374-e3c8-4d2a-93f4-94738fd18c70"/>
+				<textFieldExpression><![CDATA[$F{zone_ind_sup_zi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="0" width="80" height="20" uuid="9cc35db1-c5b2-4841-b291-f8c06df521f8"/>
+				<textFieldExpression><![CDATA[$F{zone_ind_id_w}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="240" y="0" width="80" height="20" uuid="0a9d559d-5cfe-4847-ac9d-3a545182dc63"/>
+				<textFieldExpression><![CDATA[$F{zone_ind_date_Creation}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="0" width="80" height="20" uuid="5d221e0f-443b-4639-8029-70b8d23bad0a"/>
+				<textFieldExpression><![CDATA[$F{zone_ind_nbr_lot}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="80" height="20" uuid="fe54ff6f-303e-4aad-854c-a80265883539"/>
+				<textFieldExpression><![CDATA[$F{zone_ind_OBSERVATION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="0" width="80" height="20" uuid="d07410fd-52f3-49c1-a084-d38da3a1fd7a"/>
+				<textFieldExpression><![CDATA[$F{zone_ind_nbr_lotS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="560" y="0" width="80" height="20" uuid="3382fb10-6920-44dc-8cdb-27e694365b0b"/>
+				<textFieldExpression><![CDATA[$F{zone_ind_nbr_lotC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="640" y="0" width="80" height="20" uuid="9f300e52-0f94-46b4-8eb2-2eaed6b530c9"/>
+				<textFieldExpression><![CDATA[$F{zone_ind_Sup_Cess}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="720" y="0" width="80" height="20" uuid="11729444-8690-4e9a-b0c0-1ef40e8b0541"/>
+				<textFieldExpression><![CDATA[$F{zone_ind_Sup_VS}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

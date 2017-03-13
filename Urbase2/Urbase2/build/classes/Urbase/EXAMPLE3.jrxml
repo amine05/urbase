@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="effd379c-febb-45d4-baf1-06480ff914cd">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     lot.`id_lot` AS lot_id_lot,
+     lot.`cod_lot` AS lot_cod_lot,
+     lot.`lib_lot` AS lot_lib_lot,
+     lot.`sup_lot` AS lot_sup_lot,
+     lot.`state_lot` AS lot_state_lot,
+     lot.`id_zi` AS lot_id_zi,
+     lot.`id_invst` AS lot_id_invst,
+     lot.`type_lot` AS lot_type_lot,
+     lot.`situation_physique` AS lot_situation_physique,
+     lot.`observation` AS lot_observation,
+     lot.`date_C` AS lot_date_C,
+     lot.`date_A` AS lot_date_A,
+     lot.`pris_vent` AS lot_pris_vent
+FROM
+     `lot` lot]]>
+	</queryString>
+	<field name="lot_id_lot" class="java.lang.Integer"/>
+	<field name="lot_cod_lot" class="java.lang.String"/>
+	<field name="lot_lib_lot" class="java.lang.String"/>
+	<field name="lot_sup_lot" class="java.lang.String"/>
+	<field name="lot_state_lot" class="java.lang.String"/>
+	<field name="lot_id_zi" class="java.lang.Integer"/>
+	<field name="lot_id_invst" class="java.lang.Integer"/>
+	<field name="lot_type_lot" class="java.lang.String"/>
+	<field name="lot_situation_physique" class="java.lang.String"/>
+	<field name="lot_observation" class="java.lang.String"/>
+	<field name="lot_date_C" class="java.sql.Date"/>
+	<field name="lot_date_A" class="java.sql.Date"/>
+	<field name="lot_pris_vent" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="239" splitType="Stretch">
+			<meterChart>
+				<chart>
+					<reportElement x="126" y="66" width="200" height="100" uuid="541580a5-4013-4d49-a2c5-47bdce6f91bc"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<valueDataset>
+					<valueExpression><![CDATA[]]></valueExpression>
+				</valueDataset>
+				<meterPlot>
+					<plot/>
+					<valueDisplay/>
+					<dataRange>
+						<lowExpression><![CDATA[]]></lowExpression>
+						<highExpression><![CDATA[]]></highExpression>
+					</dataRange>
+				</meterPlot>
+			</meterChart>
+			<staticText>
+				<reportElement x="134" y="36" width="100" height="20" uuid="580e5f46-4379-4a4f-9142-e9af19d8370a"/>
+				<text><![CDATA[lot_state_lot]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="234" y="36" width="100" height="20" uuid="6edf80e7-40a5-44fd-b764-85278cc5422f"/>
+				<textFieldExpression><![CDATA[$F{lot_state_lot}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
